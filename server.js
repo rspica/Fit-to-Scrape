@@ -10,20 +10,22 @@ const bodyParser = require('body-parser');
 const chalk = require('chalk');
 
 //web scraping modules
-const request = require('request');
-const cheerio = request('cheerio');
+// const request = require('request');
+// const cheerio = request('cheerio');
 
 //require models notes and articles
-const Notes = require('./models/comments.js');
-const Articles = require('./models/articles.js')
+// const Comments = require('./models/comments.js');
+// const Articles = require('./models/articles.js');
+
+// mongoose.Promise = Promise;
 
 //================================================
 // Initialize express
 const app = express();
 
 //make public a static directory
-app.use(express.static(path.join(__dirname, 'public')))
-//app.use(express.static('public'))
+// app.use(express.static(path.join(__dirname, 'public')))
+app.use(express.static('public'))
 
 app.set( 'port', process.env.PORT || 3000 );
 
@@ -34,8 +36,8 @@ app.use(bodyParser.urlencoded({ extended: false }));
 
 //================================================
 // database config and connection
-mongoose.connect("mongod://localhost/fitToScrape");
-const db = mongoose.connection;
+mongoose.connect("mongodb://127.0.0.1/fitToScrape");
+var db = mongoose.connection;
 
 //mongoose connection error handler
 db.on('error', function(err) {
@@ -52,13 +54,13 @@ db.once('open', function() {
 // scraped data handler functions
 
 // this assembles a title from the scraped end-point url
-function createTitle(url) {
-    if (url === undefined) {
-        console.log(chalk.bold.gray('not recording undefined url'));
-        return false
-    } else {
-        return url.split('-').slice(1).join(' ');
-    };
+// function createTitle(url) {
+//     if (url === undefined) {
+//         console.log(chalk.bold.gray('not recording undefined url'));
+//         return false
+//     } else {
+//         return url.split('-').slice(1).join(' ');
+//     };
 
 // Routes
 //================================================
@@ -133,8 +135,8 @@ function createTitle(url) {
 
 // Routes
 //================================================
-var scrapeRoutes = require('./controllers/scrape_control.js');
-app.use('/', scrapeRoutes);
+ var scrapeRoutes = require('./controllers/scrape_control.js');
+ app.use('/', scrapeRoutes);
 
 // Starts server
 //================================================

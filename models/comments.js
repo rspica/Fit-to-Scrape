@@ -1,5 +1,8 @@
-// Require mongoose
+// ****************** Dependencies ******************
+//---------------------------------------------------
 var mongoose = require("mongoose");
+const moment = require('moment');
+
 // Create a schema class
 var Schema = mongoose.Schema;
 
@@ -12,6 +15,7 @@ var CommentSchema = new Schema({
   // Just a string
   body: {
     type: String
+    default: moment().format('MMM Do YYYY, h:mm A')
   }
 });
 

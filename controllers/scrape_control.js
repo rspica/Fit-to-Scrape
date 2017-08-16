@@ -23,7 +23,8 @@ function createTitle(url) {
         return false
     } else {
         return url.split('-').slice(1).join(' ');
-    };
+    }
+}
 
 //routes
 //================================================

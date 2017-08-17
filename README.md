@@ -41,11 +41,13 @@ Access Fit-to-scrape via heroku at:
 
 #### dependencies
 npm packages:
+* body-parser (middleware handler)
+* chalk
+* cheerio
 * express (handles routing and the `server.js` file requires the following npm packages):
 * express-handlebars
 * mongoose
-* body-parser (middleware handler)
-* cheerio
+* morgan
 * request
 
 

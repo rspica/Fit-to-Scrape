@@ -54,17 +54,23 @@ directory organization for this repository matches the following:
 
   ```
   Fit-to-Scrape
-    - app
-      - data
-        - scrape.js
-      - public
-        - home.html
-      - routing
-        - apiRoutes.js
-        - htmlRoutes.js
-    - node_modules
-    - package.json
-    - server.js
+   |— app
+   |    └──data
+   |         └──scrape.js
+   |— controllers
+   |     └──scrape_control.js
+   |- public
+   |     |──js
+   |     |   └──app.js
+   |     └──index.html
+   |- models
+   |     |──articles.js
+   |     └──comments.js
+   |- node_modules
+   |- package.json
+   |- README.md
+   |- server.js
+   
   ```
 
 

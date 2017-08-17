@@ -54,22 +54,27 @@ directory organization for this repository matches the following:
 
   ```
   Fit-to-Scrape
-   |— app
-   |    └──data
-   |         └──scrape.js
-   |— controllers
-   |     └──scrape_control.js
-   |- public
-   |     |──js
-   |     |   └──app.js
-   |     └──index.html
-   |- models
-   |     |──articles.js
-   |     └──comments.js
-   |- node_modules
-   |- package.json
-   |- README.md
-   |- server.js
+   |—app
+   |  └──data
+   |      └──scrape.js
+   |—controllers
+   |  └──scrape_control.js
+   |-public
+   |  |──js
+   |  |   └──app.js
+   |  └──index.html
+   |-models
+   |  |──articles.js
+   |  └──comments.js
+   |-view
+   |  |──layout
+   |  |   └──main.handlebars
+   |  └──xxxx
+   |
+   |-node_modules
+   |-package.json
+   |-README.md
+   |-server.js
    
   ```
 

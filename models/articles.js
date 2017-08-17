@@ -1,7 +1,6 @@
 // ****************** Dependencies ******************
 //---------------------------------------------------
 const mongoose = require('mongoose');
-const moment = require('moment');
 
 // Create Schema class
 const Schema = mongoose.Schema;
@@ -19,10 +18,11 @@ var ArticleSchema = new Schema({
     required: true
   },
 
- date: {
-  type: String,
-  default: moment().format('MMM Do YYYY, h:mm A')
- }
+  image: {
+    type: String,
+    required: true
+  },
+
   // This only saves one comment's ObjectId, ref refers to the comment model
   comment: {
     type: Schema.Types.ObjectId,
